@@ -10,12 +10,19 @@ import { redis } from "./redis"
 import cors from 'cors'
 import { LoginResolver } from "./modules/user/Login"
 import { CurrentUserResolver } from "./modules/user/CurrentUser"
+import { ConfirmUserResolver } from "./modules/user/ConfirmUser"
 
 const main= async ()=>{
-    await createConnection()
 
+    await createConnection()
     const schema = await buildSchema({
-        resolvers: [CurrentUserResolver,RegisterResolver, LoginResolver],
+        resolvers: [
+            CurrentUserResolver,
+            RegisterResolver, 
+            LoginResolver,
+            ConfirmUserResolver
+        ],
+
         authChecker: ({context: {req}}
           ) => {
            return !!req.session.userId
