@@ -4,7 +4,7 @@ import { redis } from "../../redis";
 import bcrypt from 'bcryptjs'
 import { forgotPasswordPrefix } from "../constants/redisPrefixes";
 import { ChangePasswordInput } from "./changePassword/ChangePasswordinput";
-import { MyContext } from "src/types/MyContext";
+import { MyContext } from "../../types/MyContext";
 
 
 

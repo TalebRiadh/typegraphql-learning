@@ -1,5 +1,5 @@
 import { Field, InputType } from "type-graphql";
-import { PasswordInput } from "src/modules/shared/PasswordInput";
+import { PasswordInput } from "../../shared/PasswordInput";
 
 @InputType()
 export class ChangePasswordInput extends PasswordInput { 

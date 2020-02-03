@@ -25,7 +25,7 @@ const main= async ()=>{
     // Create a GraphQL server
     const apolloServer = new ApolloServer({
         schema,
-        context: ({ req }:any)=> ({ req })
+        context: ({ req, res }:any)=> ({ req, res})
     
     })
 
