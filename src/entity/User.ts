@@ -1,4 +1,5 @@
-import {Entity, PrimaryGeneratedColumn, Column, BaseEntity} from "typeorm";
+import { Recipe } from './Recipe';
+import {Entity, PrimaryGeneratedColumn, Column, BaseEntity, OneToMany} from "typeorm";
 import { ObjectType, Field, ID, Root } from "type-graphql";
 
 
@@ -22,6 +23,10 @@ export class User extends BaseEntity {
     @Column("text", {unique: true})
     email: string;
 
+    @OneToMany(type => Recipe, Recipe => Recipe.chef)
+    recipes: Recipe[];
+
+    
     @Field()
      name(@Root() parent:User):string{
         return `${parent.firstName} ${parent.lastName}`

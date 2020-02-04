@@ -17,7 +17,7 @@ export class RegisterResolver{
     }
 
   
-    @Mutation(() => User)
+    @Mutation(() => User) 
     async register(
         @Arg("data"){email,firstName,lastName,password}:RegisterInput
         ): Promise<User>{
