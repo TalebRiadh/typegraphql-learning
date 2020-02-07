@@ -14,7 +14,7 @@ export class Recipe extends BaseEntity {
     @Field()
     @Column()
     title: string;
-
+/*
     @Field()
     @Column()
     description: string;
@@ -22,12 +22,16 @@ export class Recipe extends BaseEntity {
     @Field()
     @Column("longtext")
     ingredients: string;
-
+*/
+    @Field()
+    @Column()
+    thumbnail: string;
+/*
     @Field()
     @Column("longtext")
     steps: string;
 
-
+*/
     // save it in minutes
     @Field()
     @Column()

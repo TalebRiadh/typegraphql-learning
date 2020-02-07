@@ -8,7 +8,8 @@ import { Upload } from "../../types/Uploads";
 @Resolver()
 export class ProfilePictureResolver{
     @Mutation(()=> Boolean)
-    async addProfilePicture(@Arg("picture",()=>GraphQLUpload)
+    async addProfilePicture(
+        @Arg("picture",()=>GraphQLUpload)
     {
         createReadStream,
         filename
@@ -22,4 +23,3 @@ export class ProfilePictureResolver{
     }
 
 }
-
